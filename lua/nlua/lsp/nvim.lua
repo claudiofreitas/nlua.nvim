@@ -1,6 +1,10 @@
 local cache_location = vim.fn.stdpath('cache')
 local bin_folder = jit.os
 
+if jit.os == "OSX" then
+	bin_folder = "macOS"
+end
+
 local nlua_nvim_lsp = {
   base_directory = string.format(
     "%s/nlua/sumneko_lua/lua-language-server/",
